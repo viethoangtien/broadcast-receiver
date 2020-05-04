@@ -14,19 +14,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ReceiverActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ReceiverActivity" />
+        <activity android:name=".SenderActivity" />
+        <activity android:name=".MainActivity" />
 
         <receiver
             android:name=".broadcast.Broadcast"
             android:exported="false">
             <intent-filter>
+                <action android:name="custom-event-name"/>
                 <action android:name="android.intent.action.AIRPLANE_MODE" />
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
                 <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
